@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeListComponentModule } from "./ui/employee-list/employee-list.component-module";
+import { EmployeeFacesComponentModule } from './ui/employee-faces/employee-faces.module';
+import { EmployeeListComponentModule } from './ui/employee-list/employee-list.component-module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { EmployeeListComponentModule } from "./ui/employee-list/employee-list.co
     AppRoutingModule,
     HttpClientModule,
     EmployeeListComponentModule,
+    EmployeeFacesComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

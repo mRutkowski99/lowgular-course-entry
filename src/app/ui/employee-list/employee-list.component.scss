@@ -1,9 +1,5 @@
 :host {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(10rem, 100%, 50rem);
+  width: var(--employee-container-width);
 }
 
 .card {

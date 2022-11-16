@@ -1,0 +1,6 @@
+<ng-container *ngIf="data$ | async as data">
+  <figure class="container" *ngFor="let employee of data">
+    <img [src]="employee.image" [alt]="employee.name + '\'s photo'" />
+    <figcaption>{{ employee.name }}</figcaption>
+  </figure>
+</ng-container>

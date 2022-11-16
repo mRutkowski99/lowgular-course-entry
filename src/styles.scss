@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --employee-container-width: clamp(10rem, 100%, 50rem);
+}
+
 html {
   font-size: 67.5%;
 }
