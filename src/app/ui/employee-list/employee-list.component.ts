@@ -1,17 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { EmployeeModel } from '../../model/employee.model';
 
 @Component({
   selector: 'employee-list',
   templateUrl: './employee-list.component.html',
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./employee-list.component.scss'],
+  // encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent {
-  data$: Observable<EmployeeModel[] | null> = of(null);
+  constructor(private _http: HttpClient) {}
+
+  data$: Observable<EmployeeModel[] | null> = this._http.get<EmployeeModel[]>(
+    'assets/data/employees.json'
+  );
 }

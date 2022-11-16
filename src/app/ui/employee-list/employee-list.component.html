@@ -1,6 +1,17 @@
-<h1>Employee list</h1>
-<ul *ngIf="data$ | async as data; else empty">
-  <li *ngFor="let employee of data">{{ employee.id }}: {{ employee.name }}</li>
-</ul>
+<h1 class="card__header">Employee list</h1>
+<div class="card__content">
+  <ul class="table" role="table" *ngIf="data$ | async as data; else empty">
+    <li class="grid table__header">
+      <span>Id</span>
+      <span>Name</span>
+      <span>Email</span>
+    </li>
+    <li *ngFor="let employee of data" class="grid">
+      <span>{{ employee.id }}</span>
+      <span>{{ employee.name }}</span>
+      <span>{{ employee.email }}</span>
+    </li>
+  </ul>
 
-<ng-template #empty> There is no data </ng-template>
+  <ng-template #empty> <span class="info">There is no data</span> </ng-template>
+</div>

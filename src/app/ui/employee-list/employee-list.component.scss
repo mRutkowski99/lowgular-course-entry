@@ -1,0 +1,48 @@
+:host {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(10rem, 100%, 50rem);
+}
+
+.card {
+  &__header {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: darkblue;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  &__content {
+    border: solid 2px darkblue;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__header {
+    font-weight: bolder;
+    border-bottom: solid 1px #000;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2rem 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+.info {
+  text-align: center;
+  font-style: italic;
+  display: block;
+}
