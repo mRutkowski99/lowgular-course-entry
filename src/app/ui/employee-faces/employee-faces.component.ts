@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EmployeeModel } from 'src/app/model/employee.model';
+import { EmployeesService } from 'src/app/services/employee/employee.service';
 
 @Component({
   selector: 'employees-faces',
@@ -10,9 +11,7 @@ import { EmployeeModel } from 'src/app/model/employee.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeFacesComponent {
-  constructor(private _http: HttpClient) {}
+  constructor(private _employeesService: EmployeesService) {}
 
-  data$: Observable<EmployeeModel[] | null> = this._http.get<EmployeeModel[]>(
-    'assets/data/employees.json'
-  );
+  data$: Observable<EmployeeModel[] | null> = this._employeesService.getAll();
 }

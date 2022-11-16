@@ -5,6 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable } from 'rxjs';
+import { EmployeesService } from 'src/app/services/employee/employee.service';
 import { EmployeeModel } from '../../model/employee.model';
 
 @Component({
@@ -15,9 +16,7 @@ import { EmployeeModel } from '../../model/employee.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent {
-  constructor(private _http: HttpClient) {}
+  constructor(private _employeesService: EmployeesService) {}
 
-  data$: Observable<EmployeeModel[] | null> = this._http.get<EmployeeModel[]>(
-    'assets/data/employees.json'
-  );
+  data$: Observable<EmployeeModel[] | null> = this._employeesService.getAll();
 }
