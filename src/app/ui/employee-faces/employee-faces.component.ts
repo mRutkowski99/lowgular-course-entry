@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EmployeeModel } from 'src/app/model/employee.model';
+import { PersonModel } from 'src/app/model/person.model';
 import { EmployeesService } from 'src/app/services/employee/employee.service';
 
 @Component({
@@ -13,5 +12,5 @@ import { EmployeesService } from 'src/app/services/employee/employee.service';
 export class EmployeeFacesComponent {
   constructor(private _employeesService: EmployeesService) {}
 
-  data$: Observable<EmployeeModel[] | null> = this._employeesService.getAll();
+  data$: Observable<PersonModel[] | null> = this._employeesService.getAll();
 }
