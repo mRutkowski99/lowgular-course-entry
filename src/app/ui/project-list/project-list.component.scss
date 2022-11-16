@@ -1,0 +1,47 @@
+:host {
+  width: var(--employee-container-width);
+}
+
+.card {
+  &__header {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: darkblue;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  &__content {
+    border: solid 2px darkblue;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__header {
+    font-weight: bolder;
+    border-bottom: solid 1px #000;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2rem 10rem 10rem 1fr;
+  grid-template-rows: auto;
+  gap: 0 1rem;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  font-style: italic;
+  display: block;
+}

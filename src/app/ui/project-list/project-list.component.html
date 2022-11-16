@@ -1,0 +1,19 @@
+<h1 class="card__header">Projects list</h1>
+<div class="card__content">
+  <ul class="table" role="table" *ngIf="data$ | async as data; else empty">
+    <li class="grid table__header">
+      <span>Id</span>
+      <span>Name</span>
+      <span>Owner</span>
+      <span>Description</span>
+    </li>
+    <li *ngFor="let project of data" class="grid">
+      <span>{{ project.id }}</span>
+      <span>{{ project.name }}</span>
+      <span>{{ project.owner }}</span>
+      <span>{{ project.description }}</span>
+    </li>
+  </ul>
+
+  <ng-template #empty> <span class="info">There is no data</span> </ng-template>
+</div>
