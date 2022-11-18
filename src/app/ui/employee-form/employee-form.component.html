@@ -1,0 +1,13 @@
+<form [formGroup]="employeeForm">
+  <input type="text" formControlName="name" placeholder="Name" />
+  <input type="number" formControlName="age" placeholder="Age" />
+  <input type="number" formControlName="salary" placeholder="Salary" />
+  <button type="submit" [disabled]="employeeForm.invalid">Submit</button>
+</form>
+<ng-container *ngIf="employeeForm.valid">
+  <p *ngIf="employee$ | async as employee">
+    Your new employee: {{ employee.name || "" }}, age:
+    {{ employee.age || "" }} with salary {{ employee.salary || "" }}$ will be
+    added to the system
+  </p>
+</ng-container>

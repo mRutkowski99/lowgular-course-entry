@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EmployeesServiceModule } from './services/employee/employee.service-module';
 import { ProjectServiceModule } from './services/project/project.service-module';
 import { EmployeeFacesComponentModule } from './ui/employee-faces/employee-faces.module';
+import { EmployeeFormModule } from './ui/employee-form/employee-form.module';
 import { EmployeeListComponentModule } from './ui/employee-list/employee-list.component-module';
 import { ProjectListComponentModule } from './ui/project-list/project-list.component-module';
 
@@ -20,6 +21,7 @@ import { ProjectListComponentModule } from './ui/project-list/project-list.compo
     EmployeesServiceModule,
     ProjectServiceModule,
     ProjectListComponentModule,
+    EmployeeFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
