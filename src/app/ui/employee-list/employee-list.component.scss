@@ -7,13 +7,13 @@
     text-align: center;
     font-size: 2rem;
     color: #fff;
-    background-color: darkblue;
+    background-color: var(--clr-primary);
     padding: 0.5rem;
     border-radius: 1rem 1rem 0 0;
   }
 
   &__content {
-    border: solid 2px darkblue;
+    border: solid 2px var(--clr-primary);
     border-radius: 0 0 1rem 1rem;
     padding: 1rem;
   }
