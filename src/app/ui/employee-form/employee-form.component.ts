@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { EmployeeFormModel } from 'src/app/model/employee-form.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -9,11 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeFormComponent {
   readonly employeeForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     age: new FormControl(null, [Validators.required, Validators.min(0)]),
     salary: new FormControl(null, [Validators.required, Validators.min(0)]),
   });
 
-  employee$: Observable<{ name: string; age: number; salary: number }> =
-    this.employeeForm.valueChanges;
+  employee$: Observable<EmployeeFormModel> = this.employeeForm.valueChanges;
+
+  onSubmit(employee: EmployeeFormModel) {
+    alert(
+      `User was successfully added to thedatabase. Email: ${employee.email}, Age: ${employee.age}, Salary: ${employee.salary}`
+    );
+  }
 }
