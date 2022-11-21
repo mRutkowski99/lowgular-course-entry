@@ -5,11 +5,13 @@
       <span>Id</span>
       <span>Name</span>
       <span>Email</span>
+      <span></span>
     </li>
     <li *ngFor="let employee of data" class="grid">
       <span>{{ employee.personalNumber }}</span>
       <span>{{ employee.name }}</span>
       <span>{{ employee.mail }}</span>
+      <button (click)="onRemove(employee.personalNumber)">Remove</button>
     </li>
   </ul>
 

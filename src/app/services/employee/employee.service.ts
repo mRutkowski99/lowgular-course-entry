@@ -17,4 +17,10 @@ export class EmployeesService {
       .post('https://dummy.restapiexample.com/api/v1/create', employee)
       .pipe(map((resp) => void 0));
   }
+
+  delete(id: string): Observable<void> {
+    return this._http
+      .delete('https://dummy.restapiexample.com/api/v1/delete/' + id)
+      .pipe(map(() => void 0));
+  }
 }
